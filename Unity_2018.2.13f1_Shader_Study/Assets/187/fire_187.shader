@@ -23,7 +23,7 @@
 		void surf (Input IN, inout SurfaceOutputStandard o) {
 			fixed4 d = tex2D (_MainTex2, float2 (IN.uv_MainTex2.x, IN.uv_MainTex2.y - _Time.y));
 			fixed4 c = tex2D (_MainTex, saturate(IN.uv_MainTex + (d.r-0.1) * _Wrap));
-			o.Albedo = c.rgb;
+			o.Emission = c.rgb;
 			o.Alpha = c.a;
 		}
 		ENDCG
